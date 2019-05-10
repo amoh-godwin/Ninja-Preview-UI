@@ -202,7 +202,7 @@ ApplicationWindow {
             height: parent.height
             spacing: 0
 
-            Rectangle {
+            Rectangle { // Nav
                 Layout.preferredWidth: 48
                 Layout.fillHeight: true
                 color: "black"
@@ -221,22 +221,30 @@ ApplicationWindow {
                     height: parent.height
                     spacing: 0
 
-                    Rectangle {
+                    DropArea {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
 
-                        ListView {
-                            id: view
-                            width: parent.width
-                            height: parent.height
-                            model: QmlFilesModel {}
-                            delegate: QmlFilesDelegate {}
-                            focus: true
-
-                            ScrollBar.vertical: ScrollBar {}
-
+                        onDropped: {
+                            addfiles(drop.urls)
                         }
 
+                        Rectangle {
+                            anchors.fill: parent
+
+                            ListView {
+                                id: view
+                                width: parent.width
+                                height: parent.height
+                                model: QmlFilesModel {}
+                                delegate: QmlFilesDelegate {}
+                                focus: true
+
+                                ScrollBar.vertical: ScrollBar {}
+
+                            }
+
+                        }
                     }
 
                     Rectangle {
