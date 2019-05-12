@@ -69,11 +69,12 @@ ApplicationWindow {
                 anchors.fill: parent
 
                 Rectangle {
-                    Layout.fillWidth: true
+                    Layout.preferredWidth: barContents.width
                     Layout.fillHeight: true
                     color: "transparent"
 
                     RowLayout {
+                        id: barContents
 
                         height: parent.height
 
@@ -85,29 +86,45 @@ ApplicationWindow {
                             source: "icons/ic_airplay_white_18dp.png"
                         }
 
-                        Text {
-                            Layout.leftMargin: 15
-                            width: 200
-                            font {
-                                family: "Segoe UI Semilight"
-                                pixelSize: 12
-                            }
-                            elide: Text.ElideMiddle
-                            text: title + "  - "
-                            color: "white"
-                        }
+                        MenuBar {
+                            Layout.fillHeight: true
 
-                        Text {
-                            font {
-                                family: "Segoe UI Semilight"
-                                pixelSize: 12
+                            background: Rectangle {
+                                color: "transparent"
                             }
-                            text: "Ninja-Preview (64-bit)"
-                            color: "white"
+
+                            Menu {
+                                title: qsTr('&File')
+
+                                Action {
+                                    text: qsTr("&Quit")
+                                }
+
+                            }
+
+                            Menu {
+                                title: qsTr('Fo&lders')
+
+                                Action {
+                                   text : qsTr("Folder's view")
+                                }
+
+                            }
+
+
                         }
 
 
                     }
+
+
+
+                }
+
+                Rectangle {
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    color: "transparent"
 
                     MouseArea {
                         anchors.fill: parent
@@ -297,7 +314,7 @@ ApplicationWindow {
 
     }
 
-    Connections {
+    /*Connections {
         target: preview
 
         onLog: {
@@ -321,6 +338,6 @@ ApplicationWindow {
             infoView.currentIndex = rel_ind
         }
 
-    }
+    }*/
 
 }
