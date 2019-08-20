@@ -18,7 +18,7 @@ ToolBar {
         NavButton {
             Layout.alignment: Layout.Top
             Layout.topMargin: 0
-            text: "\uE710"
+            text: "\uF415"
 
             onClicked: picker.open()
 

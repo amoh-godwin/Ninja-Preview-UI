@@ -28,14 +28,14 @@ Component {
             }
 
             CustomButton {
-                text: "\uE768"
+                text: "\uF40a"
 
                 onClicked: runFile(name)
 
             }
 
             CustomButton {
-                text: "\uE738"
+                text: "\uF374"
 
                 onClicked: removeFromView(index)
 
