@@ -1,7 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.5
-import "../others"
+import "../others" as Other
 
 Component {
     Rectangle {
@@ -27,15 +27,15 @@ Component {
                 }
             }
 
-            CustomButton {
-                text: "\uE768"
+            Other.CustomButton {
+                text: "\uF40a"
 
                 onClicked: runFile(name)
 
             }
 
-            CustomButton {
-                text: "\uE738"
+            Other.CustomButton {
+                text: "\uF374"
 
                 onClicked: removeFromView(index)
 

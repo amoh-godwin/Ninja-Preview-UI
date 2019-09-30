@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>UI/Components/InfoDelegate.qml</file>
+        <file>UI/Components/InfoDelegate.qmlc</file>
+        <file>UI/Components/InfoModel.qml</file>
+        <file>UI/Components/InfoModel.qmlc</file>
+        <file>UI/Components/QmlFilesDelegate.qml</file>
+        <file>UI/Components/QmlFilesDelegate.qmlc</file>
+        <file>UI/Components/QmlFilesModel.qml</file>
+        <file>UI/Components/QmlFilesModel.qmlc</file>
+        <file>UI/fonts/materialdesignicons/materialdesignicons-webfont.ttf</file>
+        <file>UI/icons/logo.png</file>
+        <file>UI/others/CustomButton.qml</file>
+        <file>UI/others/CustomButton.qmlc</file>
+        <file>UI/others/Nav.qml</file>
+        <file>UI/others/Nav.qmlc</file>
+        <file>UI/others/NavButton.qml</file>
+        <file>UI/others/NavButton.qmlc</file>
+	<file>UI/main.qml</file>
+        <file>UI/main.qmlc</file>
+    </qresource>
+</RCC>

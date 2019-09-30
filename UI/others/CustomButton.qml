@@ -6,7 +6,8 @@ Button {
     Layout.alignment: Layout.Center
     Layout.preferredWidth: 36
     Layout.preferredHeight: 28
-    font.family: "Segoe MDL2 Assets"
+    font.family: mainFont.name
+    font.pixelSize: 16
 
     background: Rectangle {
         implicitWidth: 36

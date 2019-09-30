@@ -3,8 +3,8 @@ import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Dialogs 1.3
 import QtGraphicalEffects 1.12
-import "others"
-import "Components"
+import "others" as Other
+import "Components" as Comp
 
 ApplicationWindow {
     id: mainWindow
@@ -15,6 +15,8 @@ ApplicationWindow {
     color: "transparent"
 
     flags: Qt.Window | Qt.FramelessWindowHint
+
+    FontLoader { id: mainFont; source: "fonts/materialdesignicons/materialdesignicons-webfont.ttf"}
 
     property int prevX
     property int prevY
@@ -69,12 +71,11 @@ ApplicationWindow {
                 anchors.fill: parent
 
                 Rectangle {
-                    Layout.preferredWidth: barContents.width
+                    Layout.fillWidth: true
                     Layout.fillHeight: true
                     color: "transparent"
 
                     RowLayout {
-                        id: barContents
 
                         height: parent.height
 
@@ -83,48 +84,32 @@ ApplicationWindow {
                             Layout.alignment: Layout.Center
                             sourceSize.width: 18
                             sourceSize.height: 18
-                            source: "icons/ic_airplay_white_18dp.png"
+                            source: "icons/logo.png"
                         }
 
-                        MenuBar {
-                            Layout.fillHeight: true
-
-                            background: Rectangle {
-                                color: "transparent"
+                        Text {
+                            Layout.leftMargin: 15
+                            width: 200
+                            font {
+                                family: "Segoe UI Semilight"
+                                pixelSize: 12
                             }
+                            elide: Text.ElideMiddle
+                            text: title + "  - "
+                            color: "white"
+                        }
 
-                            Menu {
-                                title: qsTr('&File')
-
-                                Action {
-                                    text: qsTr("&Quit")
-                                }
-
+                        Text {
+                            font {
+                                family: "Segoe UI Semilight"
+                                pixelSize: 12
                             }
-
-                            Menu {
-                                title: qsTr('Fo&lders')
-
-                                Action {
-                                   text : qsTr("Folder's view")
-                                }
-
-                            }
-
-
+                            text: "Ninja-Preview (64-bit)"
+                            color: "white"
                         }
 
 
                     }
-
-
-
-                }
-
-                Rectangle {
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    color: "transparent"
 
                     MouseArea {
                         anchors.fill: parent
@@ -152,23 +137,23 @@ ApplicationWindow {
                     Layout.alignment: Qt.AlignRight
                     Layout.fillHeight: true
 
-                    NavButton {
+                    Other.NavButton {
                         height: parent.height
-                        text: "\uE921"
+                        text: "\uf5b0"
 
                         onClicked: mainWindow.showMinimized()
 
                     }
 
-                    NavButton {
+                    Other.NavButton {
                         height: parent.height
-                        text: "\uE922"
+                        text: "\uF5af"
 
                     }
 
-                    NavButton {
+                    Other.NavButton {
                         height: parent.height
-                        text: "\uE8BB"
+                        text: "\uF5ad"
 
                         onClicked: mainWindow.close()
                     }
@@ -224,7 +209,7 @@ ApplicationWindow {
                 Layout.fillHeight: true
                 color: "black"
 
-                Nav {}
+                Other.Nav {}
 
             }
 
@@ -253,8 +238,8 @@ ApplicationWindow {
                                 id: view
                                 width: parent.width
                                 height: parent.height
-                                model: QmlFilesModel {}
-                                delegate: QmlFilesDelegate {}
+                                model: Comp.QmlFilesModel {}
+                                delegate: Comp.QmlFilesDelegate {}
                                 focus: true
 
                                 ScrollBar.vertical: ScrollBar {}
@@ -281,8 +266,8 @@ ApplicationWindow {
                             id: infoView
                             anchors.fill: parent
                             spacing: 12
-                            model: InfoModel {}
-                            delegate: InfoDelegate {}
+                            model: Comp.InfoModel {}
+                            delegate: Comp.InfoDelegate {}
                             focus: true
                             clip: true
 
@@ -314,7 +299,7 @@ ApplicationWindow {
 
     }
 
-    /*Connections {
+    Connections {
         target: preview
 
         onLog: {
@@ -338,6 +323,6 @@ ApplicationWindow {
             infoView.currentIndex = rel_ind
         }
 
-    }*/
+    }
 
 }
