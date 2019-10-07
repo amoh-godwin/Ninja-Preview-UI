@@ -16,7 +16,7 @@ ApplicationWindow {
 
     flags: Qt.Window | Qt.FramelessWindowHint
 
-    FontLoader { id: mainFont; source: "fonts/materialdesignicons/materialdesignicons-webfont.ttf"}
+    FontLoader { id: mainFont; source: "qrc:///UI/fonts/materialdesignicons/materialdesignicons-webfont.ttf"}
 
     property int prevX
     property int prevY
@@ -84,7 +84,7 @@ ApplicationWindow {
                             Layout.alignment: Layout.Center
                             sourceSize.width: 18
                             sourceSize.height: 18
-                            source: "icons/logo.png"
+                            source: "qrc:///icons/logo.png"
                         }
 
                         Text {
