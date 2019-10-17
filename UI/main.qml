@@ -25,6 +25,7 @@ ApplicationWindow {
     signal addfiles(string ctnt)
     signal removeFromView(int index)
     signal runFile(string filename)
+    signal runInPhoneFrame(string filename)
 
     onAddfiles: {
 
@@ -51,6 +52,13 @@ ApplicationWindow {
         infoView.model.append({"content":""})
         current_index = infoView.model.count - 1
         preview.run(filename, current_index)
+    }
+
+    onRunInPhoneFrame: {
+        title = filename
+        infoView.model.append({"content":""})
+        current_index = infoView.model.count - 1
+        preview.run_in_phone_frame(filename, current_index)
     }
 
     header: Rectangle {
