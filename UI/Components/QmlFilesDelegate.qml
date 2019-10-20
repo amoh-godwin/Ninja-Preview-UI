@@ -28,6 +28,12 @@ Component {
             }
 
             Other.CustomButton {
+                text: "\uf11c"
+
+                onClicked: runInPhoneFrame(name)
+            }
+
+            Other.CustomButton {
                 text: "\uF40a"
 
                 onClicked: runFile(name)
