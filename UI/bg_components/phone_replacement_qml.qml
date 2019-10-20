@@ -1,5 +1,5 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
+import QtQuick 2.10
+import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
 
 ApplicationWindow {
@@ -10,10 +10,7 @@ ApplicationWindow {
     title: qsTr("Window")
     color: "transparent"
     flags: Qt.Window | Qt.FramelessWindowHint
-
-    Component.onCompleted: {
-        bg.width = width + 24
-    }
+    objectName: "MainWindowItem"
 
     background: Rectangle {
         id: bg
@@ -23,21 +20,23 @@ ApplicationWindow {
         Image {
             width: parent.width
             height: parent.height
-            source: "../images/phone-bg.png"
+            source: "qrc:///images/phone-bg.png"
         }
 
     }
 
     Rectangle {
+        id: ff__
         anchors.fill: parent
         anchors.topMargin: 36
         anchors.bottomMargin: 36
         anchors.leftMargin: 24
         anchors.rightMargin: 24
-        color: "gold"
+        color: "black"
 
         ColumnLayout {
-            anchors.centerIn: parent
+            anchors.fill: parent
+            clip: true
             spacing: 0
 
             Rectangle {// menubar
@@ -45,7 +44,10 @@ ApplicationWindow {
                 Layout.fillWidth: true
                 Layout.preferredHeight: (children.length > 0) ? children[0].height : 48
                 visible: (children.length > 0)
-                color: "dodgerblue"
+                color: "black"
+                clip: true
+                objectName: "menuBarContainerItem"
+
 
             }
 
@@ -54,6 +56,11 @@ ApplicationWindow {
                 Layout.fillWidth: true
                 Layout.preferredHeight: (children.length > 0) ? children[0].height : 48
                 visible: (children.length > 0)
+                color: "black"
+                clip: true
+                objectName: "headerItem"
+
+
             }
 
             Rectangle {// contentItem
@@ -61,10 +68,11 @@ ApplicationWindow {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 visible: (children.length > 0)
+                color: "black"
+                clip: true
+                objectName: "ContentItem"
 
-                Component.onCompleted: {
-                    console.log(this)
-                }
+
             }
 
             Rectangle {// footer
@@ -72,6 +80,11 @@ ApplicationWindow {
                 Layout.fillWidth: true
                 Layout.preferredHeight: (children.length > 0) ? children[0].height : 48
                 visible: (children.length > 0)
+                clip: true
+                color: "black"
+                objectName: "footerItem"
+
+
             }
 
         }
