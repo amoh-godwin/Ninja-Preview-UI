@@ -20,7 +20,38 @@ ApplicationWindow {
         Image {
             width: parent.width
             height: parent.height
-            source: "qrc:///images/phone-bg.png"
+            source: "../images/phone-bg.png"
+        }
+
+        Rectangle {
+            id: to_p_b_a_r
+            width: parent.width
+            height: 36
+            color: "transparent"
+
+            property int prevX
+            property int prevY
+
+            MouseArea {
+                anchors.fill: parent
+
+                onPressed: {
+                    to_p_b_a_r.prevX = mouseX
+                    to_p_b_a_r.prevY = mouseY
+                }
+
+                onMouseXChanged: {
+                    var dx = mouseX - to_p_b_a_r.prevX
+                    main__window.setX(main__window.x + dx)
+                }
+
+                onMouseYChanged: {
+                    var dy = mouseY - to_p_b_a_r.prevY
+                    main__window.setY(main__window.y + dy)
+                }
+
+            }
+
         }
 
     }
