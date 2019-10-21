@@ -8,7 +8,7 @@ ToolButton {
         id: i
         implicitWidth: 48
         implicitHeight: 48
-        color: ctrl.hovered ? "#212121" : "transparent"
+        color: (ctrl.enabled == false) ? "transparent" : ctrl.hovered ? "#212121" : "transparent"
     }
 
     contentItem: Text {
@@ -17,7 +17,7 @@ ToolButton {
         font.family: mainFont.name
         font.pixelSize: 16
         text: ctrl.text
-        color: "white"
+        color: (ctrl.enabled == false) ? "#ccc" : "white"
     }
 
 }
