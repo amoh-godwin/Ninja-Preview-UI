@@ -13,23 +13,40 @@ ApplicationWindow {
     flags: Qt.Window | Qt.FramelessWindowHint
     objectName: "MainWindowItem"
 
+    signal switchFrame(string name)
+
+    onSwitchFrame: {
+        if (name == "huawei_SL") {
+            sam_s_u_n_g.visible = false
+            hu__a_w_e_i.visible = true
+            main__window.setWidth(468)
+            main__window.setHeight(736)
+            bg.curr_device = 'huawei'
+        } else if (name == "samsung_u") {
+            hu__a_w_e_i.visible = false
+            sam_s_u_n_g.visible = true
+            bg.curr_device = 'samsung'
+        }
+    }
+
     background: Rectangle {
         id: bg
         anchors.fill: parent
         color: "transparent"
 
-        property string curr_device: "huawei_P9"
+        property string curr_device: "huaweid"
 
         RowLayout {
             anchors.fill: parent
             spacing:  12
 
             Rectangle {
-                id: im_g_pa_re_nt
+                id: hu__a_w_e_i
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.leftMargin: 6
                 color: "transparent"
+                visible: true
 
                 Image {
                     width: parent.width
@@ -40,7 +57,7 @@ ApplicationWindow {
                 Rectangle {
                     id: to_p_b_a_r
                     width: parent.width
-                    height: 36
+                    height: 44
                     color: "transparent"
 
                     property int prevX
@@ -71,6 +88,53 @@ ApplicationWindow {
             }
 
             Rectangle {
+                id: sam_s_u_n_g
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                Layout.leftMargin: 6
+                color: "transparent"
+                visible: false
+
+                Image {
+                    width: parent.width
+                    height: parent.height
+                    source: "../images/Huawei_SL.png"
+                }
+
+                Rectangle {
+                    id: _to_p_b_a_r
+                    width: parent.width
+                    height: 44
+                    color: "transparent"
+
+                    property int prevX
+                    property int prevY
+
+                    MouseArea {
+                        anchors.fill: parent
+
+                        onPressed: {
+                            _to_p_b_a_r.prevX = mouseX
+                            _to_p_b_a_r.prevY = mouseY
+                        }
+
+                        onMouseXChanged: {
+                            var dx = mouseX - _to_p_b_a_r.prevX
+                            main__window.setX(main__window.x + dx)
+                        }
+
+                        onMouseYChanged: {
+                            var dy = mouseY - _to_p_b_a_r.prevY
+                            main__window.setY(main__window.y + dy)
+                        }
+
+                    }
+
+                }
+
+            }
+
+            Rectangle {
                 Layout.preferredWidth: 48
                 Layout.fillHeight: true
                 color: "black"
@@ -88,24 +152,19 @@ ApplicationWindow {
                         //height: parent.height
 
                         Other.NavButton {
-                            //Layout.alignment: Layout.Top
-                            //Layout.topMargin: 0
                             text: "\uF415"
-                            enabled: bg.curr_device == 'huawei_P9'
+                            enabled: bg.curr_device != 'huawei'
+
+                            onClicked: switchFrame('huawei_SL')
+
                         }
 
                         Other.NavButton {
-                            //Layout.alignment: Layout.Top
-                            //Layout.topMargin: 0
                             text: "\uF415"
-                            enabled: bg.curr_device == 'huawei_Mate2'
-                        }
+                            enabled: bg.curr_device != 'samsung'
 
-                        Other.NavButton {
-                            //Layout.alignment: Layout.Top
-                            //Layout.topMargin: 0
-                            text: "\uF415"
-                            enabled: bg.curr_device == 'SamsungGalaxyTab2'
+                            onClicked: switchFrame('samsung_u')
+
                         }
 
                     }
