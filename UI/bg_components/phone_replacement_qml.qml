@@ -64,7 +64,7 @@ ApplicationWindow {
         }
     }
 
-    FontLoader { id: mainFont; source: "../fonts/materialdesignicons/materialdesignicons-webfont.ttf" }
+    FontLoader { id: mainFont; source: "qrc:///fonts/materialdesignicons/materialdesignicons-webfont.ttf" }
 
     background: Rectangle {
         id: bg
@@ -88,7 +88,7 @@ ApplicationWindow {
                 Image {
                     width: parent.width
                     height: parent.height
-                    source: "../images/Huawei_SL.png"
+                    source: "qrc:///images/Huawei_SL.png"
                 }
 
                 Rectangle {
@@ -135,7 +135,7 @@ ApplicationWindow {
                 Image {
                     width: parent.width
                     height: parent.height
-                    source: "../images/samsung_u.png"
+                    source: "qrc:///images/samsung_u.png"
                 }
 
                 Rectangle {
