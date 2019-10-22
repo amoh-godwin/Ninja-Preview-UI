@@ -6,8 +6,8 @@ import "../others" as Other
 ApplicationWindow {
     id: main__window
     visible: true
-    width: 360
-    height: 640
+    width: 468
+    height: 736
     title: qsTr("Window")
     color: "transparent"
     flags: Qt.Window | Qt.FramelessWindowHint
@@ -28,12 +28,13 @@ ApplicationWindow {
                 id: im_g_pa_re_nt
                 Layout.fillWidth: true
                 Layout.fillHeight: true
+                Layout.leftMargin: 6
                 color: "transparent"
 
                 Image {
                     width: parent.width
                     height: parent.height
-                    source: "../images/phone-bg.png"
+                    source: "../images/Huawei_SL.png"
                 }
 
                 Rectangle {
@@ -122,11 +123,13 @@ ApplicationWindow {
     Rectangle {
         id: ff__
         anchors.fill: parent
-        anchors.topMargin: 36
-        anchors.bottomMargin: 36
+        anchors.topMargin: 44
+        anchors.bottomMargin: 52
         anchors.leftMargin: 24
         anchors.rightMargin: 84
-        color: "black"
+        color: "#77219195"
+
+        Component.onCompleted: console.log(width, height)
 
         ColumnLayout {
             anchors.fill: parent
