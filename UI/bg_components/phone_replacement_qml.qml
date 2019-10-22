@@ -1,7 +1,7 @@
 import QtQuick 2.10
 import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
-import "../others" as Other
+import "qrc:///UI/others" as Other
 
 ApplicationWindow {
     id: main__window
@@ -64,7 +64,7 @@ ApplicationWindow {
         }
     }
 
-    FontLoader { id: mainFont; source: "qrc:///fonts/materialdesignicons/materialdesignicons-webfont.ttf" }
+    FontLoader { id: mainFont; source: "qrc:///UI/fonts/materialdesignicons/materialdesignicons-webfont.ttf" }
 
     background: Rectangle {
         id: bg
@@ -237,6 +237,7 @@ ApplicationWindow {
                 Layout.preferredHeight: (children.length > 0) ? children[0].height : 48
                 visible: (children.length > 0)
                 clip: true
+                color: "transparent"
                 objectName: "menuBarContainerItem"
 
 
@@ -248,6 +249,7 @@ ApplicationWindow {
                 Layout.preferredHeight: (children.length > 0) ? children[0].height : 48
                 visible: (children.length > 0)
                 clip: true
+                color: "transparent"
                 objectName: "headerItem"
 
 
@@ -257,6 +259,7 @@ ApplicationWindow {
                 id: _hidd_co_nt_entItem
                 Layout.fillWidth: true
                 Layout.fillHeight: true
+                color: "transparent"
                 clip: true
                 objectName: "ContentItem"
 
@@ -268,6 +271,7 @@ ApplicationWindow {
                 Layout.fillWidth: true
                 Layout.preferredHeight: (children.length > 0) ? children[0].height : 48
                 visible: (children.length > 0)
+                color: "transparent"
                 clip: true
                 objectName: "footerItem"
 
