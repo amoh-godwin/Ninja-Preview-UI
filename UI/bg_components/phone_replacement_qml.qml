@@ -22,10 +22,25 @@ ApplicationWindow {
             hu__a_w_e_i.visible = true
             main__window.setWidth(468)
             main__window.setHeight(736)
+
+            // set margins
+            ff__.anchors.topMargin = 44
+            ff__.anchors.bottomMargin = 52
+            ff__.anchors.leftMargin = 24
+            ff__.anchors.rightMargin = 84
             bg.curr_device = 'huawei'
         } else if (name == "samsung_u") {
+            var anch = "top: 60, bottom: 60, left: 68, right: 130"
             hu__a_w_e_i.visible = false
             sam_s_u_n_g.visible = true
+            main__window.setWidth(998)
+            main__window.setHeight(720)
+
+            // set margins
+            ff__.anchors.topMargin = 60
+            ff__.anchors.bottomMargin = 60
+            ff__.anchors.leftMargin = 68
+            ff__.anchors.rightMargin = 130
             bg.curr_device = 'samsung'
         }
     }
