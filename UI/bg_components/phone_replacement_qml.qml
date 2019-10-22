@@ -6,14 +6,21 @@ import "../others" as Other
 ApplicationWindow {
     id: main__window
     visible: true
-    width: 998
-    height: 720
+    width: 468
+    height: 736
     title: qsTr("Window")
     color: "transparent"
     flags: Qt.Window | Qt.FramelessWindowHint
     objectName: "MainWindowItem"
 
     signal switchFrame(string name)
+
+    Component.onCompleted: {
+        var x = (screen.width - width) / 2
+        var y = (screen.desktopAvailableHeight - height) / 2
+        setX(x)
+        setY(y)
+    }
 
     onSwitchFrame: {
         if (name == "huawei_SL") {
@@ -39,17 +46,17 @@ ApplicationWindow {
             var anch = "top: 60, bottom: 60, left: 68, right: 130"
             hu__a_w_e_i.visible = false
             sam_s_u_n_g.visible = true
-            main__window.setWidth(998)
-            main__window.setHeight(720)
+            main__window.setWidth(992)
+            main__window.setHeight(714)
 
             // set margins
-            ff__.anchors.topMargin = 60
-            ff__.anchors.bottomMargin = 60
-            ff__.anchors.leftMargin = 68
-            ff__.anchors.rightMargin = 130
+            ff__.anchors.topMargin = 58
+            ff__.anchors.bottomMargin = 56
+            ff__.anchors.leftMargin = 66
+            ff__.anchors.rightMargin = 126
 
-            var tx = (screen.width - 998) / 2
-            var ty = (screen.desktopAvailableHeight - 720) / 2
+            var tx = (screen.width - 992) / 2
+            var ty = (screen.desktopAvailableHeight - 714) / 2
             main__window.setX(tx)
             main__window.setY(ty)
 
@@ -64,7 +71,7 @@ ApplicationWindow {
         anchors.fill: parent
         color: "transparent"
 
-        property string curr_device: "huaweid"
+        property string curr_device: "huawei"
 
         RowLayout {
             anchors.fill: parent
@@ -76,7 +83,7 @@ ApplicationWindow {
                 Layout.fillHeight: true
                 Layout.leftMargin: 6
                 color: "transparent"
-                visible: false
+                visible: true
 
                 Image {
                     width: parent.width
@@ -123,7 +130,7 @@ ApplicationWindow {
                 Layout.fillHeight: true
                 Layout.leftMargin: 6
                 color: "transparent"
-                visible: true
+                visible: false
 
                 Image {
                     width: parent.width
@@ -212,13 +219,12 @@ ApplicationWindow {
     Rectangle {
         id: ff__
         anchors.fill: parent
-        anchors.topMargin: 60
-        anchors.bottomMargin: 60
-        anchors.leftMargin: 68
-        anchors.rightMargin: 130
-        color: "#77219195"
-
-        Component.onCompleted: console.log(width, height)
+        anchors.topMargin: 44
+        anchors.bottomMargin: 52
+        anchors.leftMargin: 24
+        anchors.rightMargin: 84
+        clip: true
+        color: "black"
 
         ColumnLayout {
             anchors.fill: parent
@@ -230,7 +236,6 @@ ApplicationWindow {
                 Layout.fillWidth: true
                 Layout.preferredHeight: (children.length > 0) ? children[0].height : 48
                 visible: (children.length > 0)
-                color: "black"
                 clip: true
                 objectName: "menuBarContainerItem"
 
@@ -242,7 +247,6 @@ ApplicationWindow {
                 Layout.fillWidth: true
                 Layout.preferredHeight: (children.length > 0) ? children[0].height : 48
                 visible: (children.length > 0)
-                color: "black"
                 clip: true
                 objectName: "headerItem"
 
@@ -253,8 +257,6 @@ ApplicationWindow {
                 id: _hidd_co_nt_entItem
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                visible: (children.length > 0)
-                color: "black"
                 clip: true
                 objectName: "ContentItem"
 
@@ -267,7 +269,6 @@ ApplicationWindow {
                 Layout.preferredHeight: (children.length > 0) ? children[0].height : 48
                 visible: (children.length > 0)
                 clip: true
-                color: "black"
                 objectName: "footerItem"
 
 
