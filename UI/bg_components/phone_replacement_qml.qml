@@ -168,7 +168,7 @@ ApplicationWindow {
                         //height: parent.height
 
                         Other.NavButton {
-                            text: "\uF415"
+                            text: "\uFa34"
                             enabled: bg.curr_device != 'huawei'
 
                             onClicked: switchFrame('huawei_SL')
@@ -176,7 +176,7 @@ ApplicationWindow {
                         }
 
                         Other.NavButton {
-                            text: "\uF415"
+                            text: "\uF41e"
                             enabled: bg.curr_device != 'samsung'
 
                             onClicked: switchFrame('samsung_u')
