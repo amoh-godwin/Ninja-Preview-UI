@@ -6,8 +6,8 @@ import "../others" as Other
 ApplicationWindow {
     id: main__window
     visible: true
-    width: 468
-    height: 736
+    width: 998
+    height: 720
     title: qsTr("Window")
     color: "transparent"
     flags: Qt.Window | Qt.FramelessWindowHint
@@ -17,6 +17,7 @@ ApplicationWindow {
 
     onSwitchFrame: {
         if (name == "huawei_SL") {
+            var anc = "top: 44, bottom: 52, left: 24, right: 84"
             sam_s_u_n_g.visible = false
             hu__a_w_e_i.visible = true
             main__window.setWidth(468)
@@ -46,7 +47,7 @@ ApplicationWindow {
                 Layout.fillHeight: true
                 Layout.leftMargin: 6
                 color: "transparent"
-                visible: true
+                visible: false
 
                 Image {
                     width: parent.width
@@ -93,18 +94,18 @@ ApplicationWindow {
                 Layout.fillHeight: true
                 Layout.leftMargin: 6
                 color: "transparent"
-                visible: false
+                visible: true
 
                 Image {
                     width: parent.width
                     height: parent.height
-                    source: "../images/Huawei_SL.png"
+                    source: "../images/samsung_u.png"
                 }
 
                 Rectangle {
                     id: _to_p_b_a_r
                     width: parent.width
-                    height: 44
+                    height: 60
                     color: "transparent"
 
                     property int prevX
@@ -182,10 +183,10 @@ ApplicationWindow {
     Rectangle {
         id: ff__
         anchors.fill: parent
-        anchors.topMargin: 44
-        anchors.bottomMargin: 52
-        anchors.leftMargin: 24
-        anchors.rightMargin: 84
+        anchors.topMargin: 60
+        anchors.bottomMargin: 60
+        anchors.leftMargin: 68
+        anchors.rightMargin: 130
         color: "#77219195"
 
         Component.onCompleted: console.log(width, height)
