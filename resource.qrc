@@ -21,5 +21,7 @@
         <file alias="qml/phone_replacement_qml.qml">UI/bg_components/phone_replacement_qml.qml</file>
         <file alias="qml/replacement_qml.qml">UI/bg_components/replacement_qml.qml</file>
         <file alias="images/phone-bg.png">UI/images/phone-bg.png</file>
+        <file>UI/images/Huawei_SL.png</file>
+        <file>UI/images/samsung_u.png</file>
     </qresource>
 </RCC>
