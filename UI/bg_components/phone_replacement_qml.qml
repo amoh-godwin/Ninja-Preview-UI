@@ -28,6 +28,12 @@ ApplicationWindow {
             ff__.anchors.bottomMargin = 52
             ff__.anchors.leftMargin = 24
             ff__.anchors.rightMargin = 84
+
+            var x = (screen.width - 468) / 2
+            var y = (screen.desktopAvailableHeight - 736) / 2
+            main__window.setX(x)
+            main__window.setY(y)
+
             bg.curr_device = 'huawei'
         } else if (name == "samsung_u") {
             var anch = "top: 60, bottom: 60, left: 68, right: 130"
@@ -41,6 +47,12 @@ ApplicationWindow {
             ff__.anchors.bottomMargin = 60
             ff__.anchors.leftMargin = 68
             ff__.anchors.rightMargin = 130
+
+            var tx = (screen.width - 998) / 2
+            var ty = (screen.desktopAvailableHeight - 720) / 2
+            main__window.setX(tx)
+            main__window.setY(ty)
+
             bg.curr_device = 'samsung'
         }
     }
