@@ -45,6 +45,8 @@ ApplicationWindow {
         }
     }
 
+    FontLoader { id: mainFont; source: "../fonts/materialdesignicons/materialdesignicons-webfont.ttf" }
+
     background: Rectangle {
         id: bg
         anchors.fill: parent
