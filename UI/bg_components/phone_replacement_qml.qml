@@ -41,7 +41,7 @@ ApplicationWindow {
             main__window.setX(x)
             main__window.setY(y)
 
-            bg.curr_device = 'huawei'
+            __back__ground__.curr_device = 'huawei'
         } else if (name == "samsung_u") {
             var anch = "top: 60, bottom: 60, left: 68, right: 130"
             hu__a_w_e_i.visible = false
@@ -60,14 +60,14 @@ ApplicationWindow {
             main__window.setX(tx)
             main__window.setY(ty)
 
-            bg.curr_device = 'samsung'
+            __back__ground__.curr_device = 'samsung'
         }
     }
 
-    FontLoader { id: mainFont; source: "qrc:///UI/fonts/materialdesignicons/materialdesignicons-webfont.ttf" }
+    FontLoader { id: __main__font__; source: "qrc:///UI/fonts/materialdesignicons/materialdesignicons-webfont.ttf" }
 
     background: Rectangle {
-        id: bg
+        id: __back__ground__
         anchors.fill: parent
         color: "transparent"
 
@@ -190,7 +190,7 @@ ApplicationWindow {
 
                         Other.NavButton {
                             text: "\uFa34"
-                            enabled: bg.curr_device != 'huawei'
+                            enabled: __back__ground__.curr_device != 'huawei'
 
                             onClicked: switchFrame('huawei_SL')
 
@@ -198,7 +198,7 @@ ApplicationWindow {
 
                         Other.NavButton {
                             text: "\uF41e"
-                            enabled: bg.curr_device != 'samsung'
+                            enabled: __back__ground__.curr_device != 'samsung'
 
                             onClicked: switchFrame('samsung_u')
 

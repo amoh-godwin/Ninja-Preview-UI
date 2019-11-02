@@ -6,7 +6,7 @@ Button {
     Layout.alignment: Layout.Center
     Layout.preferredWidth: 36
     Layout.preferredHeight: 28
-    font.family: mainFont.name
+    font.family: __main__font__.name
     font.pixelSize: 16
 
     background: Rectangle {

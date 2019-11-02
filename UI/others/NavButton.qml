@@ -14,7 +14,7 @@ ToolButton {
     contentItem: Text {
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        font.family: mainFont.name
+        font.family: __main__font__.name
         font.pixelSize: 16
         text: ctrl.text
         color: (ctrl.enabled == false) ? "#ccc" : "white"
