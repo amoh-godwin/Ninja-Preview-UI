@@ -46,17 +46,17 @@ ApplicationWindow {
             var anch = "top: 60, bottom: 60, left: 68, right: 130"
             hu__a_w_e_i.visible = false
             sam_s_u_n_g.visible = true
-            main__window.setWidth(992)
-            main__window.setHeight(714)
+            main__window.setWidth(995)
+            main__window.setHeight(670)
 
             // set margins
-            ff__.anchors.topMargin = 58
-            ff__.anchors.bottomMargin = 56
-            ff__.anchors.leftMargin = 66
-            ff__.anchors.rightMargin = 126
+            ff__.anchors.topMargin = 35
+            ff__.anchors.bottomMargin = 35
+            ff__.anchors.leftMargin = 71
+            ff__.anchors.rightMargin = 124
 
-            var tx = (screen.width - 992) / 2
-            var ty = (screen.desktopAvailableHeight - 714) / 2
+            var tx = (screen.width - 995) / 2
+            var ty = (screen.desktopAvailableHeight - 670) / 2
             main__window.setX(tx)
             main__window.setY(ty)
 
@@ -135,7 +135,7 @@ ApplicationWindow {
                 Image {
                     width: parent.width
                     height: parent.height
-                    source: "qrc:///images/samsung_u.png"
+                    source: "qrc:///images/ipad.png"
                 }
 
                 Rectangle {

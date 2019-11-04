@@ -23,5 +23,6 @@
         <file alias="images/phone-bg.png">UI/images/phone-bg.png</file>
         <file alias="images/Huawei_SL.png">UI/images/Huawei_SL.png</file>
         <file alias="images/samsung_u.png">UI/images/samsung_u.png</file>
+        <file alias="images/ipad.png">UI/images/ipad.png</file>
     </qresource>
 </RCC>
