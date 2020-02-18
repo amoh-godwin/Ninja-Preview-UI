@@ -8,6 +8,12 @@ import "Components" as Comp
 
 ApplicationWindow {
     id: mainWindow
+
+    property int prevX
+    property int prevY
+    property int current_index
+    property string qt_version: ''
+
     width: 972
     height: 600
     visible: true
@@ -18,14 +24,17 @@ ApplicationWindow {
 
     FontLoader { id: __main__font__; source: "qrc:///UI/fonts/materialdesignicons/materialdesignicons-webfont.ttf"}
 
-    property int prevX
-    property int prevY
-    property int current_index
-
+    signal bootUp(string status)
     signal addfiles(string ctnt)
     signal removeFromView(int index)
     signal runFile(string filename)
     signal runInPhoneFrame(string filename)
+
+    Component.onCompleted: bootUp();
+
+    onBootUp: {
+        preview.bootUp('Loaded')
+    }
 
     onAddfiles: {
 
@@ -112,7 +121,7 @@ ApplicationWindow {
                                 family: "Segoe UI Semilight"
                                 pixelSize: 12
                             }
-                            text: "Ninja-Preview (64-bit)"
+                            text: "Ninja-Preview (" + qt_version + ")"
                             color: "white"
                         }
 
@@ -309,6 +318,11 @@ ApplicationWindow {
 
     Connections {
         target: preview
+
+        onBootedUp: {
+            var ret = bootValue
+            qt_version = ret
+        }
 
         onLog: {
             var content
