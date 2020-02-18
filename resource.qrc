@@ -20,9 +20,5 @@
         <file>UI/others/NavButton.qmlc</file>
         <file alias="qml/phone_replacement_qml.qml">UI/bg_components/phone_replacement_qml.qml</file>
         <file alias="qml/replacement_qml.qml">UI/bg_components/replacement_qml.qml</file>
-        <file alias="images/phone-bg.png">UI/images/phone-bg.png</file>
-        <file alias="images/Huawei_SL.png">UI/images/Huawei_SL.png</file>
-        <file alias="images/samsung_u.png">UI/images/samsung_u.png</file>
-        <file alias="images/ipad.png">UI/images/ipad.png</file>
     </qresource>
 </RCC>
