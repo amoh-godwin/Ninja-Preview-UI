@@ -30,10 +30,10 @@ ApplicationWindow {
     signal runFile(string filename)
     signal runInPhoneFrame(string filename)
 
-    Component.onCompleted: bootUp();
+    Component.onCompleted: bootUp('Loaded');
 
     onBootUp: {
-        preview.bootUp('Loaded')
+        preview.bootUp(status)
     }
 
     onAddfiles: {
