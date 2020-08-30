@@ -1,7 +1,7 @@
-import QtQuick 2.10
-import QtQuick.Controls 2.3
-import QtQuick.Layouts 1.3
-import QtQuick.Dialogs 1.3
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Dialogs 1.15
 import QtGraphicalEffects 1.0
 import "others" as Other
 import "Components" as Comp
@@ -13,6 +13,8 @@ ApplicationWindow {
     property int prevY
     property int current_index
     property string qt_version: ''
+
+    property QtObject preview
 
     width: 972
     height: 600
