@@ -32,7 +32,7 @@ ApplicationWindow {
     signal runFile(string filename)
     signal runInPhoneFrame(string filename)
 
-    Component.onCompleted: bootUp('Loaded');
+    //Component.onCompleted: bootUp('Loaded');
 
     onBootUp: {
         preview.bootUp(status)
@@ -318,18 +318,21 @@ ApplicationWindow {
 
     }
 
+    Timer {
+        interval: 500; running: true; repeat: false
+        onTriggered: bootUp('Loaded')
+    }
+
     Connections {
         target: preview
 
-        onBootedUp: {
-            var ret = bootValue
-            qt_version = ret
+        function onBootedUp(ret_val) {
+            qt_version = ret_val
         }
 
-        onLog: {
-            var content
-            var ret_val = _monitor
+        function onLog(ret_val) {
 
+            var content
             var splits = ret_val.split(':::')
             var rel_ind = Number.parseFloat(splits[0])
             var main_data = splits[1]
