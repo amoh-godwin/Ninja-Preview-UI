@@ -76,110 +76,120 @@ ApplicationWindow {
         anchors.left: parent.left
         anchors.leftMargin: 6
         width: bg.width
-        height: 42
+        height: 72 + 6
         color: "transparent"
 
-        Rectangle {
-            anchors.top: parent.top
-            anchors.topMargin: 6
-            width: parent.width
-            height: parent.height - 6
-            color: "#191b1f"
+        ColumnLayout {
+            anchors.fill: parent
+            spacing: 0
 
-            RowLayout {
-                anchors.fill: parent
+            Rectangle {
+                Layout.topMargin: 6
+                Layout.fillWidth: true
+                Layout.preferredHeight: 36
+                color: "#191b1f"
 
-                Rectangle {
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    color: "transparent"
+                RowLayout {
+                    anchors.fill: parent
 
-                    RowLayout {
+                    Rectangle {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        color: "transparent"
 
-                        height: parent.height
+                        RowLayout {
 
-                        Image {
-                            Layout.leftMargin: 15
-                            Layout.alignment: Layout.Center
-                            sourceSize.width: 18
-                            sourceSize.height: 18
-                            source: "qrc:///icons/logo.png"
-                        }
+                            height: parent.height
 
-                        Text {
-                            Layout.leftMargin: 15
-                            width: 200
-                            font {
-                                family: "Segoe UI Semilight"
-                                pixelSize: 12
+                            Image {
+                                Layout.leftMargin: 15
+                                Layout.alignment: Layout.Center
+                                sourceSize.width: 18
+                                sourceSize.height: 18
+                                source: "qrc:///icons/logo.png"
                             }
-                            elide: Text.ElideMiddle
-                            text: title + "  - "
-                            color: "white"
-                        }
 
-                        Text {
-                            font {
-                                family: "Segoe UI Semilight"
-                                pixelSize: 12
+                            Text {
+                                Layout.leftMargin: 15
+                                width: 200
+                                font {
+                                    family: "Segoe UI Semilight"
+                                    pixelSize: 12
+                                }
+                                elide: Text.ElideMiddle
+                                text: title + "  - "
+                                color: "white"
                             }
-                            text: "Ninja-Preview (" + qt_version + ")"
-                            color: "white"
+
+                            Text {
+                                font {
+                                    family: "Segoe UI Semilight"
+                                    pixelSize: 12
+                                }
+                                text: "Ninja-Preview (" + qt_version + ")"
+                                color: "white"
+                            }
+
+
                         }
 
+                        MouseArea {
+                            anchors.fill: parent
+
+                            onPressed: {
+                                prevX = mouseX
+                                prevY = mouseY
+                            }
+
+                            onMouseXChanged: {
+                                var dx = mouseX - prevX
+                                mainWindow.setX(mainWindow.x + dx)
+                            }
+
+                            onMouseYChanged: {
+                                var dy = mouseY - prevY
+                                mainWindow.setY(mainWindow.y + dy)
+                            }
+
+                        }
 
                     }
 
-                    MouseArea {
-                        anchors.fill: parent
+                    Row {
+                        Layout.alignment: Qt.AlignRight
+                        Layout.fillHeight: true
 
-                        onPressed: {
-                            prevX = mouseX
-                            prevY = mouseY
+                        Other.NavButton {
+                            height: parent.height
+                            text: "\uf5b0"
+
+                            onClicked: mainWindow.showMinimized()
+
                         }
 
-                        onMouseXChanged: {
-                            var dx = mouseX - prevX
-                            mainWindow.setX(mainWindow.x + dx)
+                        Other.NavButton {
+                            height: parent.height
+                            text: "\uF5af"
+
                         }
 
-                        onMouseYChanged: {
-                            var dy = mouseY - prevY
-                            mainWindow.setY(mainWindow.y + dy)
+                        Other.NavButton {
+                            height: parent.height
+                            text: "\uF5ad"
+
+                            onClicked: mainWindow.close()
                         }
+
 
                     }
 
                 }
 
-                Row {
-                    Layout.alignment: Qt.AlignRight
-                    Layout.fillHeight: true
+            }
 
-                    Other.NavButton {
-                        height: parent.height
-                        text: "\uf5b0"
-
-                        onClicked: mainWindow.showMinimized()
-
-                    }
-
-                    Other.NavButton {
-                        height: parent.height
-                        text: "\uF5af"
-
-                    }
-
-                    Other.NavButton {
-                        height: parent.height
-                        text: "\uF5ad"
-
-                        onClicked: mainWindow.close()
-                    }
-
-
-                }
-
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 36
             }
 
         }
