@@ -24,7 +24,7 @@ ApplicationWindow {
 
     flags: Qt.Window | Qt.FramelessWindowHint
 
-    FontLoader { id: __main__font__; source: "qrc:///UI/fonts/materialdesignicons/materialdesignicons-webfont.ttf"}
+    FontLoader { id: __main__font__; source: "./fonts/materialdesignicons/materialdesignicons-webfont.ttf"}
 
     signal bootUp(string status)
     signal addfiles(string ctnt)
