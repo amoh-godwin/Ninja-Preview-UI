@@ -3,6 +3,9 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
 Button {
+
+    property bool style_up: false
+
     Layout.alignment: Layout.Center
     Layout.preferredWidth: 36
     Layout.preferredHeight: 28
@@ -20,7 +23,9 @@ Button {
         horizontalAlignment: Text.AlignHCenter
         text: parent.text
         font: parent.font
-        color: "green"
+        style: parent.style_up ? Text.Outline : Text.Normal
+        styleColor: "dodgerblue"
+        color: parent.style_up ? "transparent" : "green"
     }
 
 }
