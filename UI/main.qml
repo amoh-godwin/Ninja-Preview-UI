@@ -362,4 +362,8 @@ ApplicationWindow {
 
     }
 
+    function onHotReloadExit(ind) {
+        view.itemAtIndex(ind).setHotReloadMode()
+    }
+
 }

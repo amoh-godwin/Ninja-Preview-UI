@@ -8,6 +8,11 @@ Component {
         id: delebase
 
         property bool hotReloadMode: false
+        signal setHotReloadMode()
+
+        onSetHotReloadMode: {
+            hotReloadMode = false
+        }
 
         width: parent.width
         height: 48
