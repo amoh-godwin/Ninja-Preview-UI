@@ -37,6 +37,8 @@ Component {
                 text: "\uF0e7"
                 font.family: __fa__font__.name
 
+                onClicked: runInHotReloadMode(name)
+
             }
 
             Other.CustomButton {
