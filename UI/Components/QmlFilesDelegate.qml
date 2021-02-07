@@ -34,6 +34,12 @@ Component {
             }
 
             Other.CustomButton {
+                text: "\uF0e7"
+                font.family: __fa__font__.name
+
+            }
+
+            Other.CustomButton {
                 text: "\uF40a"
 
                 onClicked: runFile(name)
