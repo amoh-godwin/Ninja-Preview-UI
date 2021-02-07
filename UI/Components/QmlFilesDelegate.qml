@@ -6,6 +6,9 @@ import "../others" as Other
 Component {
     Rectangle {
         id: delebase
+
+        property bool hotReloadMode: false
+
         width: parent.width
         height: 48
         color: index % 2 > 0 ? "white" : "#f1f1f1"
@@ -36,8 +39,9 @@ Component {
             Other.CustomButton {
                 text: "\uF0e7"
                 font.family: __fa__font__.name
+                style_up: hotReloadMode
 
-                onClicked: runInHotReloadMode(name)
+                onClicked: { hotReloadMode = true; runInHotReloadMode(name)}
 
             }
 

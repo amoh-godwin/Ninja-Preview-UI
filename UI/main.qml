@@ -16,8 +16,6 @@ ApplicationWindow {
 
     property QtObject preview
 
-    property bool hotreloadMode: false
-
     width: 972
     height: 600
     visible: true
@@ -78,8 +76,6 @@ ApplicationWindow {
 
     onRunInHotReloadMode: {
         title = filename
-        hotreloadMode = !hotreloadMode
-        console.log(hotreloadMode)
         infoView.model.append({"content":""})
         current_index = infoView.model.count - 1
         preview.run_in_hot_reload_mode(filename, current_index)
