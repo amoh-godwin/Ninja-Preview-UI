@@ -6,6 +6,7 @@
         <file>UI/Components/QmlFilesDelegate.qml</file>
         <file>UI/Components/QmlFilesModel.qml</file>
         <file>UI/fonts/materialdesignicons/materialdesignicons-webfont.ttf</file>
+        <file>UI/fonts/fa_solid.otf</file>
         <file alias="icons/logo.png">UI/icons/logo.png</file>
         <file>UI/others/CustomButton.qml</file>
         <file>UI/others/Nav.qml</file>
