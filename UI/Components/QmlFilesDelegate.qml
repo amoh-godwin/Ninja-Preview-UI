@@ -11,7 +11,7 @@ Component {
         signal setHotReloadMode()
 
         onSetHotReloadMode: {
-            hotReloadMode = false
+            delebase.hotReloadMode = false
         }
 
         width: parent.width
@@ -46,7 +46,7 @@ Component {
                 font.family: __fa__font__.name
                 style_up: hotReloadMode
 
-                onClicked: { hotReloadMode = true; runInHotReloadMode(name)}
+                onClicked: { hotReloadMode = true; runInHotReloadMode(name, index)}
 
             }
 

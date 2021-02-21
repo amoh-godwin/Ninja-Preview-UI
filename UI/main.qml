@@ -32,7 +32,7 @@ ApplicationWindow {
     signal removeFromView(int index)
     signal runFile(string filename)
     signal runInPhoneFrame(string filename)
-    signal runInHotReloadMode(string filename)
+    signal runInHotReloadMode(string filename, int current_index)
 
     //Component.onCompleted: bootUp('Loaded');
 
@@ -77,8 +77,8 @@ ApplicationWindow {
     onRunInHotReloadMode: {
         title = filename
         infoView.model.append({"content":""})
-        current_index = infoView.model.count - 1
-        preview.run_in_hot_reload_mode(filename, current_index)
+        var view_index = infoView.model.count - 1
+        preview.run_in_hot_reload_mode(filename, view_index, current_index)
     }
 
 
@@ -360,10 +360,11 @@ ApplicationWindow {
             infoView.currentIndex = rel_ind
         }
 
+        function onHotReloadExit(ind) {
+            view.itemAtIndex(ind).setHotReloadMode()
+        }
+
     }
 
-    function onHotReloadExit(ind) {
-        view.itemAtIndex(ind).setHotReloadMode()
-    }
 
 }
